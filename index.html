@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+</head>
+<header>
+    <h1>Etch a Sketch</h1>
+</header>
+<body>
+    <div id="content">
+        <button id="sizeButton">Change size</button>
+        <div id="container"></div>
+        <div id = "buttons">
+            <button id="eraseOrDraw">Change to Erase</button>
+            <button id="colorButton">Switch to Multicolor</button>
+        </div>
+    </div>
+    <dialog>
+        <div>Enter new number of squares per side (2-100)</div>
+        <input type="number" id="numSquares" min="2" max="100" value="16">
+        <button id="closeButton" autofocus>Close</button>
+    </dialog>  
+</body>
+</html>

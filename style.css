@@ -1,0 +1,45 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+body {
+    background-color: lightgray;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.square {
+    height: 20px;
+    width: 20px;
+}
+
+#eraseOrDraw {
+    margin-top: 20px;
+    align-self: flex-center;
+}
+
+dialog {
+    margin: 0; /* Overrides default centering */
+    /* Understand this transform stuff!!!!!!!!!!! */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centers the dialog horizontally */
+}
