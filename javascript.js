@@ -1,19 +1,16 @@
 // File constants
-const container = document.querySelector('#container');
 const sizeButton = document.getElementById('sizeButton');
 const closeButton = document.getElementById('closeButton');
 const eraseButton = document.getElementById('eraseOrDraw');
 const colorButton = document.getElementById('colorButton');
 const dialog = document.querySelector('dialog');
 const input = document.getElementById('numSquares');
-const minSquares = 2;
-const maxSquares = 100;
 const defaultSquares = 16;
-const totalLength = 520;
 let squaresPerSide = defaultSquares;
 
 // buildGrid creates a square grid with squaresPerSide squares per side 
 function buildGrid() {
+    const container = document.querySelector('#container');
     for (let x = 0; x < squaresPerSide; x++) {
         // figure out why this seems backwards!!!
         let column = document.createElement("div");
@@ -22,7 +19,7 @@ function buildGrid() {
             square.classList.add("square");
             column.appendChild(square);
         }
-         container.appendChild(column);
+        container.appendChild(column);
     }
 }
 
@@ -39,6 +36,7 @@ function addEventListeners() {
 
 function setSquareDimensions() {
     const squares = document.querySelectorAll('.square');
+    const totalLength = 520;
     const sideLength = totalLength/squaresPerSide;
     squares.forEach(square => {
         square.style.height = sideLength + 'px';
@@ -65,8 +63,11 @@ sizeButton.addEventListener('click', () => {
 // Event listener for change grid size dialog close button. Deletes the old grid,
 // set the new side length and recreates a new grid with the new side length.
 closeButton.addEventListener('click', () => {
+    const container = document.querySelector('#container');
     const value = Number(input.value);
     // Validate min/max
+    const minSquares = 2;
+    const maxSquares = 100;
     squaresPerSide = (value >= minSquares && value <= maxSquares) ? value : defaultSquares;
     dialog.close();
     container.replaceChildren();
